@@ -1,0 +1,128 @@
+Grupo,ID_Ticket,Modulo,Descripcion
+Grupo 1,M-01,main.py,La variable root se inicializa como None antes de usarla
+Grupo 1,M-02,main.py,La geometría de la ventana usa espacio en lugar de 'x'
+Grupo 1,M-03,main.py,Importación incorrecta de LoginView (falta prefijo views.)
+Grupo 1,M-04,main.py,Importación incorrecta de ClienteView (vista no existe)
+Grupo 1,M-05,main.py,Se asigna usuario_actual = nombre y usuario_nombre = id (invertido)
+Grupo 1,DB-01,database.py,Puerto de base de datos incorrecto (3307 en lugar de 3306)
+Grupo 1,DB-02,database.py,No hay manejo específico de excepciones de MySQL
+Grupo 1,DB-03,database.py,La función cerrar_conexion no verifica si conexion existe
+Grupo 1,DB-04,database.py,No se retorna información del error al llamador
+Grupo 1,DB-05,database.py,Falta función para ejecutar consultas genéricas
+Grupo 1,SEC-01,security.py,Se usa MD5 para hash en lugar de SHA-256 (inseguro)
+Grupo 1,SEC-02,security.py,Patrón de validación de email incompleto
+Grupo 1,SEC-03,security.py,Código 2FA de solo 4 dígitos en lugar de 6
+Grupo 1,SEC-04,security.py,No se valida el email antes de enviar código 2FA
+Grupo 1,SEC-05,security.py,La función enviar_codigo_2fa no retorna estado de envío
+Grupo 1,USR-01,usuario.py,Consulta SQL vulnerable a inyección en crear()
+Grupo 1,USR-02,usuario.py,No se valida longitud mínima de contraseña
+Grupo 1,USR-03,usuario.py,No se maneja correctamente el registro de repartidores
+Grupo 1,USR-04,usuario.py,crear() no retorna el ID del usuario creado
+Grupo 1,USR-05,usuario.py,Consulta SQL vulnerable a inyección en login()
+Grupo 1,PRO-01,producto.py,obtener_todos() no ordena los resultados alfabéticamente
+Grupo 1,PRO-02,producto.py,No maneja correctamente cuando no hay productos
+Grupo 1,PRO-03,producto.py,obtener_por_restaurante() no valida restaurante_id
+Grupo 1,PRO-04,producto.py,crear() permite precios negativos
+Grupo 1,CAR-01,carrito.py,agregar() no valida que cantidad sea positiva
+Grupo 1,CAR-02,carrito.py,No hay límite máximo de cantidad por producto
+Grupo 1,CLI-01,cliente_view.py,No hay barra de búsqueda de productos
+Grupo 1,CLI-02,cliente_view.py,No hay filtros por categoría de productos
+Grupo 2,M-06,main.py,Comparación de tipo incorrecta (cliente sin comillas)
+Grupo 2,M-07,main.py,El método logout no limpia todas las variables de sesión
+Grupo 2,M-08,main.py,Se llama a root.run() en lugar de root.mainloop()
+Grupo 2,M-09,main.py,El parámetro de LoginView debería ser self.on_login_success
+Grupo 2,M-10,main.py,Falta verificar si el usuario ya está logueado antes de mostrar login
+Grupo 2,DB-06,database.py,Falta función para obtener cursor de base de datos
+Grupo 2,DB-07,database.py,Falta función para manejar transacciones
+Grupo 2,DB-08,database.py,Falta función para validar si la conexión está activa
+Grupo 2,DB-09,database.py,Falta función para reconectar automáticamente
+Grupo 2,DB-10,database.py,No hay validación de parámetros de configuración
+Grupo 2,SEC-06,security.py,Validación de teléfono solo verifica longitud
+Grupo 2,SEC-07,security.py,Falta función para sanitizar entradas de usuario
+Grupo 2,SEC-08,security.py,Falta función para escapar caracteres especiales
+Grupo 2,SEC-09,security.py,Falta función para generar token de sesión seguro
+Grupo 2,SEC-10,security.py,Falta función para validar token de sesión
+Grupo 2,USR-06,usuario.py,El diccionario de login() no incluye el campo 'tipo'
+Grupo 2,USR-07,usuario.py,obtener_por_id() no valida que usuario_id sea entero
+Grupo 2,USR-08,usuario.py,Falta método para actualizar perfil de usuario
+Grupo 2,USR-09,usuario.py,Falta método para desactivar cuenta de usuario
+Grupo 2,USR-10,usuario.py,Falta método para listar todos los usuarios
+Grupo 2,PRO-05,producto.py,No se valida que el nombre del producto no esté vacío
+Grupo 2,PRO-06,producto.py,crear() no retorna el ID del producto creado
+Grupo 2,PRO-07,producto.py,actualizar_precio() permite precios negativos
+Grupo 2,PRO-08,producto.py,actualizar_precio() no verifica que el producto exista
+Grupo 2,CAR-03,carrito.py,obtener() no verifica que cliente_id exista
+Grupo 2,CAR-04,carrito.py,calcular_total() retorna None cuando debería ser 0
+Grupo 2,CLI-03,cliente_view.py,No hay botón para ver perfil de usuario
+Grupo 2,CLI-04,cliente_view.py,No se muestran promociones en los productos
+Grupo 3,PED-01,pedido.py,No se valida longitud mínima de dirección de entrega
+Grupo 3,PED-02,pedido.py,No se verifica que el carrito tenga items antes de crear pedido
+Grupo 3,PED-03,pedido.py,No se maneja el caso cuando no hay repartidores disponibles
+Grupo 3,PED-04,pedido.py,obtener_por_cliente() no valida cliente_id
+Grupo 3,PED-05,pedido.py,actualizar_estado() no valida que el estado sea permitido
+Grupo 3,PED-06,pedido.py,cancelar() no verifica estado actual antes de cancelar
+Grupo 3,PED-07,pedido.py,obtener_detalle() no valida que pedido_id exista
+Grupo 3,PED-08,pedido.py,obtener_por_repartidor() no valida que repartidor_usuario_id exista
+Grupo 3,PED-09,pedido.py,obtener_por_fecha() no valida formato de fechas
+Grupo 3,PED-10,pedido.py,obtener_estado() no valida que pedido_id exista
+Grupo 3,REP-01,repartidor.py,Consulta SQL vulnerable a inyección en obtener_id()
+Grupo 3,REP-02,repartidor.py,obtener_pedidos_asignados() no verifica que el usuario sea repartidor
+Grupo 3,REP-03,repartidor.py,actualizar_estado_pedido() no valida que el estado sea permitido
+Grupo 3,REP-04,repartidor.py,cambiar_disponibilidad() no valida que usuario_id exista
+Grupo 3,REP-05,repartidor.py,actualizar_ubicacion() no valida coordenadas
+Grupo 3,PAG-01,pago_service.py,Validación débil del número de tarjeta
+Grupo 3,PAG-02,pago_service.py,No se valida fecha de expiración de tarjeta
+Grupo 3,PAG-03,pago_service.py,No se valida que el monto sea positivo
+Grupo 3,PAG-04,pago_service.py,Validación insuficiente para número de Nequi colombiano
+Grupo 3,PAG-05,pago_service.py,No hay límite máximo para pagos en efectivo
+Grupo 3,REPV-01,repartidor_view.py,No hay confirmación antes de marcar entregado
+Grupo 3,REPV-02,repartidor_view.py,No hay botón para actualizar ubicación
+Grupo 3,REPV-03,repartidor_view.py,No hay botón para cambiar disponibilidad
+Grupo 3,RES-01,restaurante_view.py,No hay tabla para ver pedidos recibidos del restaurante
+Grupo 3,RES-02,restaurante_view.py,No hay botón para ver estadísticas de ventas
+Grupo 3,CAR-05,carrito.py,vaciar() no verifica que el cliente tenga carrito
+Grupo 3,CAR-06,carrito.py,eliminar_item() no verifica si se eliminó algún registro
+Grupo 3,CAR-07,carrito.py,actualizar_cantidad() no valida nueva_cantidad positiva
+Grupo 4,CAR-08,carrito.py,falta método para obtener cantidad de producto específico
+Grupo 4,CAR-09,carrito.py,Falta método para obtener resumen del carrito
+Grupo 4,CAR-10,carrito.py,Falta método para verificar si producto está en carrito
+Grupo 4,PAGM-01,pago.py,No valida que pedido_id exista en la base de datos
+Grupo 4,PAGM-02,pago.py,No valida que el monto sea positivo
+Grupo 4,PAGM-03,pago.py,No valida que el método de pago sea válido
+Grupo 4,PAGM-04,pago.py,No valida que pedido_id exista en obtener_por_pedido
+Grupo 4,PAGM-05,pago.py,No formatea las fechas correctamente
+Grupo 4,PAGM-06,pago.py,No valida que el estado sea permitido en actualizar_estado
+Grupo 4,PAGM-07,pago.py,No verifica el estado actual antes de reembolsar
+Grupo 4,PAGM-08,pago.py,Solo permite reembolsar pagos completados
+Grupo 4,PAGM-09,pago.py,No valida los parámetros en verificar_duplicado
+Grupo 4,PAGM-10,pago.py,No valida el formato de las fechas en obtener_total_recaudado
+Grupo 4,STY-01,styles.py,Color de fondo principal incorrecto
+Grupo 4,STY-02,styles.py,Color de fondo secundario incorrecto
+Grupo 4,STY-03,styles.py,Color primario incorrecto (debería ser #FF6B35)
+Grupo 4,STY-04,styles.py,Color secundario incorrecto (debería ser #2EC4B6)
+Grupo 4,STY-05,styles.py,Color de acento incorrecto
+Grupo 4,STY-06,styles.py,Color de éxito incorrecto
+Grupo 4,STY-07,styles.py,Color de warning incorrecto
+Grupo 4,STY-08,styles.py,Color de texto claro incorrecto
+Grupo 4,STY-09,styles.py,Fuente de título incorrecta (debería ser Segoe UI)
+Grupo 4,STY-10,styles.py,Fuente de subtítulo incorrecta
+Grupo 4,CLI-05,cliente_view.py,No se muestra el precio antes de agregar al carrito
+Grupo 4,CLI-06,cliente_view.py,El carrito no se actualiza automáticamente
+Grupo 4,CLI-07,cliente_view.py,No se muestra subtotal por producto en carrito
+Grupo 4,CLI-08,cliente_view.py,No hay scroll para la lista de pedidos
+Grupo 5,PRO-09,producto.py,eliminar() no verifica que el producto exista
+Grupo 5,PRO-10,producto.py,Falta método para buscar productos por nombre
+Grupo 5,REP-06,repartidor.py,obtener_historial() no valida que usuario_id exista
+Grupo 5,REP-07,repartidor.py,calificar() no valida calificación entre 1 y 5
+Grupo 5,REP-08,repartidor.py,obtener_promedio() no valida que usuario_id exista
+Grupo 5,REP-09,repartidor.py,obtener_cercanos() no implementa cálculo real de distancia
+Grupo 5,REP-10,repartidor.py,obtener_por_usuario() no maneja caso cuando no existe
+Grupo 5,PAG-06,pago_service.py,No hay límite máximo para pagos en efectivo
+Grupo 5,PAG-07,pago_service.py,Falta validación de tarjeta con algoritmo de Luhn
+Grupo 5,PAG-08,pago_service.py,Falta método para calcular comisión por transacción
+Grupo 5,PAG-09,pago_service.py,Falta método para generar referencia única de pago
+Grupo 5,PAG-10,pago_service.py,Falta método para reembolsar pagos
+Grupo 5,CARV-01,carrito_view.py,No muestra subtotal por producto en la tabla
+Grupo 5,CARV-02,carrito_view.py,No hay botón para modificar cantidad de productos
+Grupo 5,CARV-03,carrito_view.py,No hay confirmación antes de eliminar producto
+Grupo 5,CARV-04,carrito_view.py,C
